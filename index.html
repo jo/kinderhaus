@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang=de>
+<head>
+  <meta charset=utf-8>
+  <link href='http://fonts.googleapis.com/css?family=Londrina+Outline|Carrois+Gothic|Port+Lligat+Slab&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: 'Port Lligat Slab', serif;
+      font-size: 120%;
+      color: #222;
+    }
+    h1, h2 {
+      font-family: 'Carrois Gothic', sans-serif;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    a {
+      text-decoration: none;
+      color: #c32418;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      padding: 6ex 3em;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: normal;
+      font-family: 'Londrina Outline';
+      font-size: 4.618em;
+    }
+    header h1 a {
+      color: #222;
+    }
+    header nav {
+      text-align: right;
+    }
+    header ul {
+      margin: 0;
+    }
+    header li {
+      display: inline;
+      margin-left: 1em;
+    }
+    header + div {
+      clear: both;
+    }
+    .image {
+      height: 400px;
+      max-height: 61.8%;
+      background-size: 100% auto;
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+    }
+    @media (max-width: 980px) {
+      .image { background-size: 150% auto; }
+    }
+    @media (max-width: 720px) {
+      .image { background-size: 250% auto; }
+    }
+    @media (max-width: 420px) {
+      .image { background-size: 350% auto; }
+    }
+    #heaven {
+      background-image: url(heaven.jpg);
+    }
+    #house {
+      background-image: url(house.jpg);
+    }
+    #way {
+      background-image: url(way.jpg);
+    }
+    article {
+      padding: 4% 3em;
+      min-height: 30.2%;
+      -moz-column-width: 18em;
+      -moz-column-gap: 3em;
+      box-shadow: 0 0 12px silver;
+      border-bottom: 1px solid silver;
+    }
+    article * {
+      margin: 0;
+    }
+    article p {
+      page-break-inside: avoid;
+      padding-top: 3ex;
+    }
+    article h2 {
+      font-size: 1em;
+      padding-bottom: 3ex;
+    }
+  </style>
+  <style id=image-style></style>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+   <![endif]-->
+</head>
+<body>
+<div class=image id=heaven>
+  <header>
+    <h1><a href=index.html>Kinderhaus ZDF e.V.</a></h1>
+    <nav>
+      <ul>
+        <li><a href=#about>Über Uns</a>
+        <li><a href=#konzept>Konzept</a>
+        <li><a href=#kontakt>Kontakt</a>
+      </ul>
+    </nav>
+  </header>
+</div>
+<article id=about>
+  <h1>Eltern-Initiativ-Kindertagesstätte Berlin Zehlendorf</h1>
+  <h2>Montessori orientiert</h2>
+  <p>Ein wunderschoener Kindergarten. Ein Maerchenort fuer gross und klein. Und noch mehr Buzz. Ein kindertraum und Elterntraum. Raum fzur Entfaltung. Platz, aber nicht zuviel. Auch nicht zuviel Kinder. Tolle Erzieherinnen.</p>
+  <p>Ein Mensch zu sein. Dabeisein.</p>
+</article>
+<div class=image id=house></div>
+<article id=konzept>
+  <h1>Hilfe zur Selbsthilfe</h1>
+  <p>Maria Montessori wuchs in einer großbürgerlichen Familie Italiens auf. Im 19 Jh. erwarb sie als erste Frau den Doktortitel (1892-1896) der Medizin. Sie war sehr erfolgreich auf den verschiedensten medizinischen Gebieten. Auch in der Politik hatte sie großen Erfolg, merkte aber schnell, daß man sie ausnutzen wollte.</p>
+  <p>Fortan setzte sie sich für die Rechte der Kinder ein. Nach überragenden Erfolgen ihrer Kinderhäuser im römischen Proletarierviertel San Lorenzo gab sie ihre zuvor gegründete Arztpraxis auf. 1916 verließ sie Italien und ließ sich in Barcelona nieder, wo sie die nächsten 20 Jahre lebte.</p>
+  <p>In den folgenden Jahren reiste sie viel durch die Welt, ließ sich dann jedoch in den Niederlanden nieder, engagierte sich zunehmend für den Frieden und gründete schließlich eine Internationale Gesellschaft.</p>
+  <p>Nach langer Zeit bekennt sie sich endlich zu ihrem Sohn und setzt ihn als rechtmäßigen Erben ein. Auf der darauffolgenden Reise nach Indien nimmt sie ihn als Begleiter mit.</p>
+  <p>Aufgrund des 2. Weltkrieges wird sie dort wegen ihrer Nationalität (italienisch) interniert und kehrt erst nach dem Ende des Krieges 1946 nach Europa zurück. Am 6. Mai 1952 starb sie in Nordwiik aan Zee in Holland.</p>
+</article>
+<div class=image id=way></div>
+<article id=kontakt>
+  <h1>Kontakt</h1>
+  <p>Onkel-Tom-Strasse 64a<br>
+  14169 Berlin Zehlendorf</p>
+  <p>Telefonnummer: <br>
+  und 030 813 20 15</p>
+  <p>Und per Email an <a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>
+</article>
+<div class=image id=map></div>
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<script>
+  var position = [52.44808, 13.25190];
+  var map = L.map('map').setView(position, 15);
+  L.tileLayer('http://{s}.tile.cloudmade.com/574f54b974214267b57cd8a3b318af5f/997/256/{z}/{x}/{y}.png', {
+    attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
+  }).addTo(map);
+  L.marker(position).addTo(map)
+    .bindPopup('Onkel Tom Strasse 30<br>14167 Berlin Zehlendorf')
+    .openPopup();
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var speed = 3.81;
+    var style = document.getElementById('image-style');
+    var $window = $(window);
+    function parallax() {
+      var yPos = -($window.scrollTop() / speed);
+      style.innerHTML = '.image { background-position: 50% ' + yPos + 'px; }'
+    }
+    $window.scroll(parallax);
+    parallax();
+  });
+</script>
