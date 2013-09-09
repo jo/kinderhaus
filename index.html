@@ -57,7 +57,6 @@
     }
     .image {
       height: 400px;
-      max-height: 61.8%;
       background-size: 100% auto;
       background-position: 50% 0;
       background-repeat: no-repeat;
@@ -81,12 +80,10 @@
       background-image: url(way.jpg);
     }
     #map {
-      height: 800%;
-      max-height: 100%;
+      height: 700px;
     }
     article {
       padding: 4% 3em;
-      min-height: 30.2%;
       -moz-column-width: 18em;
       -moz-column-gap: 3em;
       -o-column-width: 18em;
@@ -113,9 +110,31 @@
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
    <![endif]-->
+  <script>
+    // http://stackoverflow.com/questions/7718935/load-scripts-asynchronously
+    //this function will work cross-browser for loading scripts asynchronously
+    function loadScript(src, callback) {
+      var s,
+          r,
+          t;
+      r = false;
+      s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = src;
+      s.onload = s.onreadystatechange = function() {
+        //console.log( this.readyState ); //uncomment this line to see which ready states are called.
+        if ( !r && (!this.readyState || this.readyState == 'complete') )
+        {
+          r = true;
+          callback();
+        }
+      };
+      document.body.appendChild(s);
+    }
+  </script>
 </head>
 <body>
-<div class=image id=heaven>
+<div class=image id=heaven data-top="background-position: 50% 0px" data-top-bottom="background-position: 50% -250px">
   <header>
     <h1><a href=index.html>Kinderhaus ZDF e.V.</a></h1>
     <nav>
@@ -133,7 +152,7 @@
   <p>Ein wunderschöner Kindergarten. Ein Märchenort für gross und klein. Und noch mehr Buzz: Ein Kindertraum und Elterntraum. Raum zur Entfaltung. Platz, aber nicht zuviel. Auch nicht zuviel Kinder. Tolle Erzieherinnen.</p>
   <p>Ein Mensch zu sein. Dabeisein.</p>
 </article>
-<div class=image id=house></div>
+<div class=image id=house data-bottom-top="background-position: 50% 0px" data-top-bottom="background-position: 50% -300px"></div>
 <article id=konzept>
   <h1>Hilfe zur Selbsthilfe</h1>
   <p>Maria Montessori wuchs in einer großbürgerlichen Familie Italiens auf. Im 19 Jh. erwarb sie als erste Frau den Doktortitel (1892-1896) der Medizin. Sie war sehr erfolgreich auf den verschiedensten medizinischen Gebieten. Auch in der Politik hatte sie großen Erfolg, merkte aber schnell, daß man sie ausnutzen wollte.</p>
@@ -142,7 +161,7 @@
   <p>Nach langer Zeit bekennt sie sich endlich zu ihrem Sohn und setzt ihn als rechtmäßigen Erben ein. Auf der darauffolgenden Reise nach Indien nimmt sie ihn als Begleiter mit.</p>
   <p>Aufgrund des 2. Weltkrieges wird sie dort wegen ihrer Nationalität (italienisch) interniert und kehrt erst nach dem Ende des Krieges 1946 nach Europa zurück. Am 6. Mai 1952 starb sie in Nordwiik aan Zee in Holland.</p>
 </article>
-<div class=image id=way></div>
+<div class=image id=way data-bottom-top="background-position: 50% 0px" data-top-bottom="background-position: 50% -400px"></div>
 <article id=kontakt>
   <h1>Kontakt</h1>
   <p>Onkel-Tom-Strasse 64b<br>
@@ -152,28 +171,18 @@
   <p>Und per Email an <a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>
 </article>
 <div class=image id=map></div>
-<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 <script>
-  var position = [52.44808, 13.25190];
-  var map = L.map('map').setView(position, 15);
-  L.tileLayer('http://{s}.tile.cloudmade.com/574f54b974214267b57cd8a3b318af5f/997/256/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
-  }).addTo(map);
-  L.marker(position).addTo(map)
-    .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>01525 378 65 21<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
-    .openPopup();
-</script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-    var speed = 3.81;
-    var style = document.getElementById('image-style');
-    var $window = $(window);
-    function parallax() {
-      var yPos = -($window.scrollTop() / speed);
-      style.innerHTML = '.image { background-position: 50% ' + yPos + 'px; }'
-    }
-    $window.scroll(parallax);
-    parallax();
+  loadScript('http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js', function() {
+    var position = [52.44808, 13.25190];
+    var map = L.map('map').setView(position, 15);
+    L.tileLayer('http://{s}.tile.cloudmade.com/574f54b974214267b57cd8a3b318af5f/997/256/{z}/{x}/{y}.png', {
+      attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
+    }).addTo(map);
+    L.marker(position).addTo(map)
+      .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>01525 378 65 21<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
+      .openPopup();
+  });
+  loadScript('skrollr.min.js', function() {
+    skrollr.init();
   });
 </script>
