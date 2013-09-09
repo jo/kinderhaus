@@ -207,21 +207,15 @@
       .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>0176 921 871 25<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
       .openPopup();
   });
+</script>
+<script src=skrollr.min.js></script>
+<script src=skrollr.menu.min.js></script>
+<script>
   loadScript('skrollr.min.js', function() {
     var s = skrollr.init({
       forceHeight: false,
       smoothScrolling: false
     });
     skrollr.menu.init(s);
-  });
-</script>
-<script src=skrollr.min.js></script>
-<script src=skrollr.menu.min.js></script>
-<script>
-  loadScript('skrollr.min.js', function() {
-    skrollr.init({
-      forceHeight: false,
-      smoothScrolling: false
-    });
   });
 </script>
