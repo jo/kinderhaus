@@ -147,28 +147,6 @@
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
    <![endif]-->
-  <script>
-    // http://stackoverflow.com/questions/7718935/load-scripts-asynchronously
-    //this function will work cross-browser for loading scripts asynchronously
-    function loadScript(src, callback) {
-      var s,
-          r,
-          t;
-      r = false;
-      s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.src = src;
-      s.onload = s.onreadystatechange = function() {
-        //console.log( this.readyState ); //uncomment this line to see which ready states are called.
-        if ( !r && (!this.readyState || this.readyState == 'complete') )
-        {
-          r = true;
-          callback();
-        }
-      };
-      document.body.appendChild(s);
-    }
-  </script>
 </head>
 <body>
 <div id=skrollr-body>
@@ -224,18 +202,6 @@
 </article>
 </div>
 <div class=image id=map></div>
-<script>
-  loadScript('http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js', function() {
-    var position = [52.44808, 13.25190];
-    var map = L.map('map', { scrollWheelZoom: false }).setView(position, 15);
-    L.tileLayer('http://{s}.tile.cloudmade.com/574f54b974214267b57cd8a3b318af5f/997/256/{z}/{x}/{y}.png', {
-      attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
-    }).addTo(map);
-    L.marker(position).addTo(map)
-      .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>030 813 20 15<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
-      .openPopup();
-  });
-</script>
 <script src=skrollr.min.js></script>
 <script src=skrollr.menu.min.js></script>
 <script>
@@ -244,4 +210,15 @@
     smoothScrolling: false
   });
   skrollr.menu.init(s);
+</script>
+<script src=http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js></script>
+<script>
+  var position = [52.44808, 13.25190];
+  var map = L.map('map', { scrollWheelZoom: false }).setView(position, 15);
+  L.tileLayer('http://{s}.tile.cloudmade.com/574f54b974214267b57cd8a3b318af5f/997/256/{z}/{x}/{y}.png', {
+    attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
+  }).addTo(map);
+  L.marker(position).addTo(map)
+    .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>030 813 20 15<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
+    .openPopup();
 </script>
