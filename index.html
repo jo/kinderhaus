@@ -195,6 +195,16 @@
   <p>Und per Email an <a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>
 </article>
 </div>
+<script src=skrollr.min.js></script>
+<script src=skrollr-menu.min.js></script>
+<script>
+  loadScript('skrollr.min.js', function() {
+    skrollr.init({
+      forceHeight: false,
+      smoothScrolling: false
+    });
+  });
+</script>
 <div class=image id=map></div>
 <script>
   loadScript('http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js', function() {
@@ -208,9 +218,10 @@
       .openPopup();
   });
   loadScript('skrollr.min.js', function() {
-    skrollr.init({
+    var s = skrollr.init({
       forceHeight: false,
       smoothScrolling: false
     });
+    skrollr.menu.init(s);
   });
 </script>
