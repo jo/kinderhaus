@@ -208,6 +208,9 @@
       .openPopup();
   });
   loadScript('skrollr.min.js', function() {
-    skrollr.init();
+    skrollr.init({
+      forceHeight: false,
+      smoothScrolling: false
+    });
   });
 </script>
