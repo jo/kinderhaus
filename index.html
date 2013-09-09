@@ -13,11 +13,13 @@
     body {
       margin: 0;
       font-family: 'Port Lligat Slab', serif;
-      font-size: 120%;
+      font-size: 123%;
+      line-height: 3ex;
       color: #222;
     }
     h1, h2 {
       font-family: 'Carrois Gothic', sans-serif;
+      line-height: 3ex;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -37,19 +39,26 @@
       font-weight: normal;
       font-family: 'Londrina Outline';
       font-size: 4.618em;
+      line-height: 2ex;
       color: white;
     }
-    @media (max-width: 420px) {
-      header h1{ font-size: 3em; }
+    @media (max-width: 800px) {
+      header h1 { font-size: 3.618em; }
     }
-    @media (max-width: 320px) {
-      header h1{ font-size: 2em; }
+    @media (max-width: 520px) {
+      header h1 { font-size: 3em; }
+    }
+    @media (max-width: 380px) {
+      header h1 { font-size: 2em; }
     }
     header h1 a {
       color: white;
     }
     header nav {
-      font-size: 1.2em;
+      font-size: 1.3em;
+    }
+    @media (max-width: 520px) {
+      header nav { font-size: 1em; }
     }
     header nav ul {
       margin: 0;
@@ -58,6 +67,9 @@
     header nav li {
       display: inline;
       margin-right: 1em;
+    }
+    header nav li:last-child {
+      margin-right: 0;
     }
     header nav a {
       color: white;
@@ -94,36 +106,39 @@
     }
     article {
       padding: 4% 3em;
-      -moz-column-width: 18em;
+      -moz-column-width: 16em;
       -moz-column-gap: 3em;
-      -o-column-width: 18em;
+      -o-column-width: 16em;
       -o-column-gap: 3em;
-      -webkit-column-width: 18em;
+      -webkit-column-width: 16em;
       -webkit-column-gap: 3em;
+      column-width: 16em;
+      column-gap: 3em;
       box-shadow: 0 0 36px silver;
       border-bottom: 1px solid silver;
     }
     article * {
       margin: 0;
     }
-    article h2, article p, article ul {
+    article h1, article h2, article p, article ul {
       padding: 0 0 3ex 0;
+    }
+    h1.ff {
+      padding-bottom: 0.3ex;
+    }
+    article h1 {
+      font-size: 2em;
+      line-height: 3.1ex;
+    }
+    article h2 {
+      font-size: 1em;
     }
     article p {
       page-break-inside: avoid;
     }
     article ul {
       page-break-inside: avoid;
-    }
-    article h2 {
-      font-size: 1em;
-    }
-    .break {
-      page-break-before: always;
-      page-break-after: avoid;
-    }
-    #konzept h1 {
-      padding-bottom: 3ex;
+      padding: 0 2em 3ex 2em;
     }
   </style>
   <style id=image-style></style>
@@ -169,7 +184,7 @@
   </header>
 </div>
 <article id=about>
-  <h1>Eltern-Initiativ–Kindertagesstätte in Berlin Zehlendorf</h1>
+  <h1 class=ff>Eltern-Initiativ–Kindertagesstätte in Berlin Zehlendorf</h1>
   <h2>mit Montessori Ausrichtung</h2>
   <p>Unser kleines, freundliches und traditionsreiches Kinderhaus hat ab sofort noch wenige Plätze frei!</p>
   <ul>
@@ -189,11 +204,12 @@
   <p>Träger der Einrichtung ist der 1971 von Eltern gegründete gemeinnützige Verein Eltern-Initiativ-Kindertaggesstätte Onkel-Toms-Hütte e.V.</p>
   <p>Das Mittagessen wird von den Eltern selbst zubereitet. Die Eltern kümmern sich gemeinsam um die Geschicke des Kinderhauses.</p>
   <p>Jede Eingewöhnung erfolgt ganz individuell. Während der Eingewöhnung bleiben die Eltern mit im Kinderhaus bis sie sich in Absprache mit den Erziehrinnen und ihrem Kind immer weiter zurückziehen.</p>
+  <br>
+  <p><cite>„Ich zeige Dir, was ich kann!“</cite></p>
   <h2>Pädagogisches Konzept</h2>
   <p>Das Kinderhaus ist ein Lebensraum für Kinder, in dem die Möglichkeit haben, selbstbestimmt und eigeninitiativ zu spielen und zu lernen.</p>
   <p>Dabei sind die Erziehrinnen die liebevollen Begleiterinnen der Kinder. Sie unterstützen, geben Anregungen, Zuwendung und setzen nötigenfalls Grenzen.</p>
   <p>Die Basis des Miteinanders ist der gegenseitige Respekt. Es wird den Kindern Vertrauen und Zutrauen in ihre Fähigkeiten entgegengebracht.</p>
-  <p><cite>„Ich zeige Dir, was ich kann!“</cite></p>
   <p>Im Kinderhaus können die Kinder sich im Rahmen von Projekten intensiv mit spannenden Themen auseinandersetzen. Die Themen werden über einen längeren Zeitraum auf mehreren Ebenen bearbeitet: Es werden Experimente gemacht, Bücher gelesen, Lieder gesungen, gebastelt und es finden Ausflüge oder Feste zu dem Thema statt.</p>
 </article>
 <div class=image id=way data-bottom-top="background-position: 50% 0px" data-top-bottom="background-position: 50% -250px"></div>
@@ -201,9 +217,9 @@
   <h1>Kontakt</h1>
   <p>Onkel-Tom-Strasse 64b<br>
   14169 Berlin Zehlendorf</p>
-  <p>Telefonnummer: 0176 921 871 25<br>
-  und 030 813 20 15</p>
-  <p>Und per Email an <a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>
+  <p><strong>Kinderhaus</strong>: 0176 921 871 25<br>
+  <strong>Ulrike</strong>: 030 813 20 15</p>
+  <p><a href=mailto:mail@kinderhaus-zehlendorf.de>mail@kinderhaus-zehlendorf.de</a></p>
 </article>
 </div>
 <div class=image id=map></div>
@@ -215,7 +231,7 @@
       attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
     }).addTo(map);
     L.marker(position).addTo(map)
-      .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>0176 921 871 25<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
+      .bindPopup('<h3>Kinderhaus ZDF</h3><p>Onkel Tom Strasse 64b<br>14167 Berlin Zehlendorf</p><p>030 813 20 15<br><a href=mailto:mail@kinderhaus.de>mail@kinderhaus.de</a></p>')
       .openPopup();
   });
 </script>
