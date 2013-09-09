@@ -211,11 +211,9 @@
 <script src=skrollr.min.js></script>
 <script src=skrollr.menu.min.js></script>
 <script>
-  loadScript('skrollr.min.js', function() {
-    var s = skrollr.init({
-      forceHeight: false,
-      smoothScrolling: false
-    });
-    skrollr.menu.init(s);
+  var s = skrollr.init({
+    forceHeight: false,
+    smoothScrolling: false
   });
+  skrollr.menu.init(s);
 </script>
