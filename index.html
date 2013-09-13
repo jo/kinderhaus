@@ -15,12 +15,11 @@
       margin: 0;
       font-family: 'Port Lligat Slab', serif;
       font-size: 123%;
-      line-height: 3ex;
+      line-height: 1.5;
       color: #222;
     }
     h1, h2 {
       font-family: 'Carrois Gothic', sans-serif;
-      line-height: 3ex;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -40,7 +39,6 @@
       font-weight: normal;
       font-family: 'Londrina Outline';
       font-size: 4.618em;
-      line-height: 2ex;
       color: white;
     }
     @media (max-width: 800px) {
@@ -102,6 +100,11 @@
     #way {
       background-image: url(img/way.jpg);
     }
+    #map {
+      background-image: url(img/map.jpg);
+      height: 750px;
+      background-color: #f8f4e8;
+    }
     article {
       padding: 4% 3em;
       -moz-column-width: 16em;
@@ -127,7 +130,6 @@
     }
     article h1 {
       font-size: 2em;
-      line-height: 3.1ex;
     }
     article h2 {
       font-size: 1em;
@@ -138,7 +140,6 @@
     article ul {
       page-break-inside: avoid;
       list-style-type: none;
-      line-height: 3ex;
       margin: 1ex 0;
     }
     article ul li{
@@ -146,9 +147,9 @@
       font-size: 0.8em;
       margin: 0.125em 0;
     }
-    #map {
-      height: 100%;
-      background-color: #f8f4e8;
+    cite {
+      font-size: 1.6em;
+      color: #666;
     }
   </style>
   <style id=image-style></style>
@@ -178,10 +179,9 @@
     <ul>
       <li>Für Kinder ab 3 Jahren
       <li>Betreuungszeiten von 8.00 – 16.00 Uhr
-      <li>Gute BVG-Anbindung
       <li>Ein wunderschöner Garten
       <li>Kinderturnen &amp; Musik
-      <li>Selbst zubereitetes köstliches Mittagessen
+      <li>Gute BVG-Anbindung
     </ul>
     <p>Wir freuen uns darauf, Euch kennen zu lernen!</p>
   </article>
@@ -191,8 +191,9 @@
     <p>Das Kinderhaus ist eine Eltern-Initiativ-Kindertagesstätte mit 12 Kindern zwischen 3 und 6 Jahren.</p>
     <p>Träger der Einrichtung ist der 1971 von Eltern gegründete gemeinnützige Verein Eltern-Initiativ-Kindertaggesstätte Onkel-Toms-Hütte e.V.</p>
     <p>Das Mittagessen wird von den Eltern selbst zubereitet. Die Eltern kümmern sich gemeinsam um die Geschicke des Kinderhauses.</p>
+    <p>Die Kinder sind jeden Tag, bei jedem Wetter im Garten, wo sie gärtnern, klettern, toben, entdecken.</p>
     <p>Jede Eingewöhnung erfolgt ganz individuell. Während der Eingewöhnung bleiben die Eltern mit im Kinderhaus bis sie sich in Absprache mit den Erziehrinnen und ihrem Kind immer weiter zurückziehen.</p>
-    <p><cite>„Ich zeige Dir, was ich kann!“</cite></p>
+    <p><cite>„Hilf mir, es selbst zu tun!“</cite></p>
     <br>
     <h2>Pädagogisches Konzept</h2>
     <p>Das Kinderhaus ist ein Lebensraum für Kinder, in dem die Möglichkeit haben, selbstbestimmt und eigeninitiativ zu spielen und zu lernen.</p>
@@ -212,28 +213,17 @@
     </p>
     <p><a href=mailto:mail@kinderhausonkeltom@gmx.de>kinderhausonkeltom@gmx.de</a></p>
   </article>
+  <div class=image id=map data-bottom-top="background-position: 50% 0px" data-top-bottom="background-position: 50% -250px"></div>
 </div>
-<div id=map>&nbsp;</div>
-<script src=http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js></script>
-<script>
-  var position = [52.44808, 13.25190];
-  var map = L.map('map', { scrollWheelZoom: false }).setView(position, 15);
-  L.tileLayer('http://{s}.tile.cloudmade.com/574f54b974214267b57cd8a3b318af5f/997/256/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href=http://die-tf.de>TF</a>'
-  }).addTo(map);
-  L.marker(position).addTo(map)
-    .bindPopup('<h3>Kinderhaus</h3><p>Onkel-Tom-Strasse 64b<br>14167 Berlin Zehlendorf</p><p>030 813 20 15<br><a href=mailto:kinderhausonkeltom@gmx.de>kinderhausonkeltom@gmx.de</a></p>')
-    .openPopup();
-</script>
 <script src=js/skrollr.min.js></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="js/skrollr.ie.min.js"></script>
 <![endif]-->
 <script src=js/skrollr.menu.min.js></script>
 <script>
-  // var s = skrollr.init({
-  //   forceHeight: false,
-  //   smoothScrolling: false
-  // });
-  // skrollr.menu.init(s);
+  var s = skrollr.init({
+    forceHeight: false,
+    smoothScrolling: false
+  });
+  skrollr.menu.init(s);
 </script>
