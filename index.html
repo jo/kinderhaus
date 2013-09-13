@@ -4,6 +4,7 @@
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Kinderhaus Onkel–Toms-Hütte e.V.</title>
+  <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
   <link href='http://fonts.googleapis.com/css?family=Londrina+Outline|Carrois+Gothic|Port+Lligat+Slab&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <style>
     html, body {
@@ -93,13 +94,13 @@
       .image { background-size: 400% auto; }
     }
     #heaven {
-      background-image: url(heaven.jpg);
+      background-image: url(img/heaven.jpg);
     }
     #house {
-      background-image: url(house.jpg);
+      background-image: url(img/house.jpg);
     }
     #way {
-      background-image: url(way.jpg);
+      background-image: url(img/way.jpg);
     }
     #map {
       height: 700px;
@@ -212,8 +213,11 @@
   </article>
 </div>
 <div class=image id=map></div>
-<script src=skrollr.min.js></script>
-<script src=skrollr.menu.min.js></script>
+<script src=js/skrollr.min.js></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
+<![endif]-->
+<script src=js/skrollr.menu.min.js></script>
 <script>
   var s = skrollr.init({
     forceHeight: false,
