@@ -16,33 +16,33 @@ if(isset($_GET['email'])) {
 	}
 	
 	// validation expected data exists
-	if(!isset($_POST['e_name']) ||
-		!isset($_POST['c_name']) ||
-		!isset($_POST['c_date']) ||
-		!isset($_POST['g_name']) ||
-		!isset($_POST['g_date']) ||
-		!isset($_POST['anschrift']) ||
-		!isset($_POST['email']) ||
-		!isset($_POST['telefon']) ||
-		!isset($_POST['mobile']) ||
-		!isset($_POST['wann']) ||
-		!isset($_POST['woher']) ||
-		!isset($_POST['warum'])) {
+	if(!isset($_GET['e_name']) ||
+		!isset($_GET['c_name']) ||
+		!isset($_GET['c_date']) ||
+		!isset($_GET['g_name']) ||
+		!isset($_GET['g_date']) ||
+		!isset($_GET['anschrift']) ||
+		!isset($_GET['email']) ||
+		!isset($_GET['telefon']) ||
+		!isset($_GET['mobile']) ||
+		!isset($_GET['wann']) ||
+		!isset($_GET['woher']) ||
+		!isset($_GET['warum'])) {
 		died('We are sorry, but there appears to be a problem with the form you submitted.');		
 	}
 	
-	$c_name = $_POST['c_name'];
-	$c_date = $_POST['c_date'];
-	$g_name = $_POST['g_name'];
-	$g_date = $_POST['g_date'];
-	$e_name = $_POST['e_name'];
-	$anschrift = $_POST['anschrift'];
-	$email_from = $_POST['email'];
-	$telefon = $_POST['telefon'];
-	$mobile = $_POST['mobile'];
-	$wann = $_POST['wann'];
-	$warum = $_POST['warum'];
-	$woher = $_POST['woher'];
+	$c_name = $_GET['c_name'];
+	$c_date = $_GET['c_date'];
+	$g_name = $_GET['g_name'];
+	$g_date = $_GET['g_date'];
+	$e_name = $_GET['e_name'];
+	$anschrift = $_GET['anschrift'];
+	$email_from = $_GET['email'];
+	$telefon = $_GET['telefon'];
+	$mobile = $_GET['mobile'];
+	$wann = $_GET['wann'];
+	$warum = $_GET['warum'];
+	$woher = $_GET['woher'];
 	
 	$error_message = "";
 	$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
