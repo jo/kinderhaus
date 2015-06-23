@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['email'])) {
+if(isset($_GET['email'])) {
 	
 	//$email_to = "kinderhausonkeltom@gmx.de";
     $email_to = "seeger@system180.com";
