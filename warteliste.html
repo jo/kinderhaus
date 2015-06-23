@@ -123,6 +123,9 @@ var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
 <form action="http://formspree.io/seeger@system180.com"
     method="POST">
     <input type="text" name="name">
-        <input type="email" name="_replyto">
-            <input type="submit" value="Send">
+    <input type="text" name="_replyto" placeholder="Your email" />
+    <input type="hidden" name="_next" value="danke.html" />
+    <input type="hidden" name="_subject" value="Neue Warteliste" />
+    <input type="hidden" name="_cc" value="b@futurecandy.net" />
+    <input type="submit" value="Send">
 </form>
