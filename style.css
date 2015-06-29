@@ -1,0 +1,109 @@
+body {
+    color: #333;
+    font: 0.75em/1.13em "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    line-height: 1.5;
+    clear: both;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    width: 980px;
+}
+
+span.tbox-wrap {
+    background: #eee;
+    border-radius: 4px;
+    padding: 3px 0;
+    text-align: center;
+    width: 303px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+span.tbox-wrap input {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 3px;
+    width: 295px;
+    box-sizing: border-box;
+}
+
+div.right {
+    float: right;
+    padding-bottom: 5%;
+    width: 95%;
+    padding-top: 25px;
+}
+
+div.right h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+div.right div p {
+    margin: 0 15% 3% 0;
+}
+
+div.right label {
+    display: inline-block;
+    float: left;
+    padding-right: 25px;
+    padding-top: .5%;
+    text-align: right;
+    width: 25.6%;
+    word-wrap: break-word;
+}
+
+div.right span {
+    color: #9a9999;
+    display: inline-block;
+    margin-bottom: 2%;
+}
+
+
+div.right img.recycle-domain-attn {
+    display: none;
+    position: absolute;
+    left: 880px;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+div.right span.err-msg span.textfieldRequiredMsg {
+    display: none;
+    color: #ea0000;
+    font-size: 11px;
+}
+
+div.divq
+{
+    width: 80%;
+}
+
+span.err-msg {
+    color: #ea0000;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .07mm;
+    margin-bottom: 0;
+    display: inline-block;
+    margin-top: 0.0em;
+    padding-left: 20.5em;
+}
+
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong,
+th, figcaption {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+    color: #333;
+}
+
+h3{font-size:1.667em;}
+
+h4{}
+
+h4{font-weight:bold;font-size:1.167em;}
+h4{margin-bottom:.8em;clear:both;}
+h3, h4{line-height:1.1;margin-bottom:5px;}
+

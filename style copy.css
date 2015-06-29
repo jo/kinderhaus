@@ -1,0 +1,155 @@
+body {
+    color: #333;
+    font: 0.75em/1.13em "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    line-height: 1.5;
+    clear: both;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    width: 980px;
+}
+
+span.tbox-wrap {
+    background: #eee;
+    border-radius: 4px;
+    padding: 3px 0;
+    text-align: center;
+    width: 303px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+span.tbox-wrap input {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 3px;
+    width: 295px;
+    box-sizing: border-box;
+}
+
+div.right {
+    float: right;
+    padding-bottom: 5%;
+    width: 57%;
+    padding-top: 25px;
+}
+
+div.right h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+div.right div p {
+    margin: 0 15% 3% 0;
+}
+
+div.right label {
+    display: inline-block;
+    float: left;
+    padding-right: 25px;
+    padding-top: .5%;
+    text-align: right;
+    width: 25.6%;
+    word-wrap: break-word;
+}
+
+div.right span {
+    color: #9a9999;
+    display: inline-block;
+    margin-bottom: 2%;
+}
+
+
+.tbox {
+    padding-top:10;
+    background:red;
+    width:900px;
+    margin-left:30px;
+}
+
+.err-msg{ width:200px; padding-top:4; background:green;}
+
+#parent{
+    float: left;
+    height:100px;
+    width:480px;
+    margin-top:55px;
+    text-align:center;
+    border: solid red 1px;
+}
+
+
+
+.parent{
+    float: left;
+    margin-top:55px;
+    position: relative;
+    border: solid green 1px;
+}
+
+.child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.l {
+    height:40px;
+    border: 1px solid red;
+    text-align: left;
+    width: 120px;
+    vertical-align: middle;
+}
+
+.d {
+    border: 1px solid red;
+    text-align: left;
+    width: 160px;
+}
+
+.row {
+    width:100%;
+    margin: 0 auto
+}
+
+
+q::before {
+    content: "«";
+    color: blue;
+}
+q::after {
+    content: "»";
+    color: red;
+}
+
+body {
+    background: #f06d06;
+    font-size: 80%;
+}
+
+main {
+    background: white;
+    height: 300px;
+    margin: 20px;
+    width: 300px;
+    position: relative;
+    resize: vertical;
+    overflow: auto;
+}
+
+main div {
+    background: black;
+    color: white;
+    padding: 20px;
+    resize: vertical;
+    overflow: auto;
+    
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+}
