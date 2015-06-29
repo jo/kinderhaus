@@ -1,6 +1,6 @@
 function validate() {
     
-    event.preventDefault();
+    //event.preventDefault();
     
     try {
         var result = true;
@@ -27,8 +27,9 @@ function validate() {
         
     } catch (e) {
         throw new Error(e.message);
+        return false;
     }
-    return false;
+    
 
     
     //.textContent
